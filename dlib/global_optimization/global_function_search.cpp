@@ -584,7 +584,7 @@ namespace dlib
                 info->radius = 0;
             }
             info->best_objective_value = y;
-            info->best_x = std::move(req.x);
+            info->best_x = req.x;
         }
     }
 
@@ -623,7 +623,7 @@ namespace dlib
     {
         DLIB_CASSERT(functions_.size() > 0);
         DLIB_CASSERT(functions_.size() == initial_function_evals.size());
-        DLIB_CASSERT(relative_noise_magnitude >= 0);
+        DLIB_CASSERT(relative_noise_magnitude_ >= 0);
         relative_noise_magnitude = relative_noise_magnitude_;
         for (size_t i = 0; i < initial_function_evals.size(); ++i)
         {
